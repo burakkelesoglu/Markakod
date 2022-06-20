@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MarkaKod.Model.Location>
+
+@{
+    ViewData["Title"] = "Locaiton List";
+}
+
+<h1>Location List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Long)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visited)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Km)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Long)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visited)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Km)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id} )
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
